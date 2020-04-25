@@ -22,7 +22,7 @@ These Applescript files can be used with the Automator application on MacOSX. Th
 - Copy-Paste the text of `edit-text-in-vim.applescript` to the Applescript Object
 - Save the Automator action as "Edit in VIM"
 
-Now the action will automatically appear when you right-click selected text
+Now the action will automatically appear when you right-click selected text. Edit the text in VIM, save it, quit VIM and the text will be pasted automatically back to the original application.
 
 #### open-file-in-vim
 - Open Automator
@@ -32,6 +32,6 @@ Now the action will automatically appear when you right-click selected text
 - Copy-Paste the text of `edit-text-in-vim.applescript` to the Applescript Object
 - Save the Automator action as "Open in VIM"
 
-Now the action will automatically appear in Finder when you select or right-click a file
+Now the action will automatically appear in Finder when you select or right-click a file. Execute it to edit the file directly in VIM.
 
-You can also use `open-file-in-vim.applescript` to create an Application that can open files directly in VIM when double-clicking them in Finder
+You can also use `open-file-in-vim.applescript` to create an Automator "Application" instead of a "Quick Action". The resulting Application can open files directly in VIM when double-clicking them in Finder.
