@@ -35,3 +35,18 @@ Now the action will automatically appear when you right-click selected text. Edi
 Now the action will automatically appear in Finder when you select or right-click a file. Execute it to edit the file directly in VIM. The parent folder of the file will be set as working directory. If multiple files are selected they will open in VIM tabs.
 
 You can also use `open-file-in-vim.applescript` to create an Automator "Application" instead of a "Quick Action". The resulting Application can open files directly in VIM when double-clicking them in Finder.
+
+##### Bonus: current file in Terminal top bar
+As a bonus, you can see the currently edited file in the top bar of Terminal if you add this to your .vimrc:
+
+```
+set t_ts=^[]6;
+set t_fs=^G
+set title
+set titlestring=%{\"file://\".hostname().expand(\"%:p\")}
+```
+
+- To get the `^[` character press `Ctrl-v` then `Esc` when in insert mode.
+- To get the `^G` character, press `Ctrl-v` then `Ctrl-G` when in insert mode.
+
+The rest are "normal" characters.
