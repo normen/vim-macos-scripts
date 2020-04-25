@@ -53,7 +53,7 @@ You can also use `open-file-in-vim.applescript` to create an Automator "Applicat
 You can set the application to always open files of a specific type through their Finder information panel. You can also use it to open a new instance of VIM without opening a file.
 
 #### Bonus: current file in Terminal top bar
-As a bonus, you can see the currently edited file in the top bar of Terminal if you add this to your .vimrc:
+As a bonus, you can see the currently edited file in the top bar of Terminal if you add this to your `.vimrc:
 
 ```
 set t_ts=^[]6;
