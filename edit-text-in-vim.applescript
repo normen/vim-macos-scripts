@@ -37,9 +37,11 @@ on run {input, parameters}
 		set size of myWindow to {910, 800}
 		activate
 		-- wait for command to finish
-		repeat while (exists myWindow) and (myTab is busy)
-			delay 0.1
-		end repeat
+		try
+			repeat while (exists myWindow) and (myTab is busy)
+				delay 0.1
+			end repeat
+		end try
 	end tell
 	-- read file contents and return
 	set myString to (read posixtmpfile)
