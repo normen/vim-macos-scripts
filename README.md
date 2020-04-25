@@ -21,7 +21,7 @@ See this video:
 - Allow the action to receive Plain Text
 - Add an Applescript action to the flow
 - Copy-Paste the text of `edit-text-in-vim.applescript` to the Applescript Object
-- Save the Automator action
+- Save the Automator action as "Edit in VIM"
 
 Now the action will automatically appear when you right-click selected text
 
@@ -31,7 +31,7 @@ Now the action will automatically appear when you right-click selected text
 - Allow the action to receive files and folders
 - Add an Applescript action to the flow
 - Copy-Paste the text of `edit-text-in-vim.applescript` to the Applescript Object
-- Save the Automator action
+- Save the Automator action as "Open in VIM"
 
 Now the action will automatically appear in Finder when you select or right-click a file
 
