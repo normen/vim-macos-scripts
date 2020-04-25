@@ -32,6 +32,6 @@ Now the action will automatically appear when you right-click selected text. Edi
 - Copy-Paste the text of `edit-text-in-vim.applescript` to the Applescript Object
 - Save the Automator action as "Open in VIM"
 
-Now the action will automatically appear in Finder when you select or right-click a file. Execute it to edit the file directly in VIM.
+Now the action will automatically appear in Finder when you select or right-click a file. Execute it to edit the file directly in VIM. The parent folder of the file will be set as working directory. If multiple files are selected they will open in VIM tabs.
 
 You can also use `open-file-in-vim.applescript` to create an Automator "Application" instead of a "Quick Action". The resulting Application can open files directly in VIM when double-clicking them in Finder.
