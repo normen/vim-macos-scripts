@@ -4,7 +4,6 @@ Applescript files to create Automator actions invoking VIM in Terminal.app
 ## What is this?
 These Applescript files can be used with the Automator application on MacOSX. They allow you to create Quick Actions to edit text files or text snippets in the VIM command-line editor.
 
-See this video:
 ![edit-in-vim-example](/doc/edit-in-vim.gif?raw=true "Edit in VIM")
 
 ## How to use
