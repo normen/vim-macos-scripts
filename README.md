@@ -36,7 +36,7 @@ Now the action will automatically appear in Finder when you select or right-clic
 
 You can also use `open-file-in-vim.applescript` to create an Automator "Application" instead of a "Quick Action". The resulting Application can open files directly in VIM when double-clicking them in Finder.
 
-##### Bonus: current file in Terminal top bar
+#### Bonus: current file in Terminal top bar
 As a bonus, you can see the currently edited file in the top bar of Terminal if you add this to your .vimrc:
 
 ```
