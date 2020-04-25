@@ -16,7 +16,7 @@ These Applescript files can be used with the Automator application on MacOSX. Th
 
 #### edit-text-in-vim
 - Open Automator
-- Create a new "Quick Action"
+- Create a new "Quick Action" (Contextual Workflow)
 - Allow the action to receive Plain Text
 - Add an Applescript action to the flow
 - Copy-Paste the text of `edit-text-in-vim.applescript` to the Applescript Object
@@ -26,7 +26,7 @@ Now the action will automatically appear when you right-click selected text. Edi
 
 #### open-file-in-vim
 - Open Automator
-- Create a new "Quick Action"
+- Create a new "Quick Action" (Contextual Workflow)
 - Allow the action to receive files and folders
 - Add an Applescript action to the flow
 - Copy-Paste the text of `edit-text-in-vim.applescript` to the Applescript Object
