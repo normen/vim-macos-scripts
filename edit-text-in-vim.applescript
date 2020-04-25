@@ -44,7 +44,7 @@ on run {input, parameters}
 		end try
 	end tell
 	-- read file contents and return
-	set myString to (read posixtmpfile)
+	set myString to (read posixtmpfile as «class utf8»)
 	-- delete file posixtmpfile
 	do shell script "/bin/rm " & quoted form of posixtmpfile
 	return myString
