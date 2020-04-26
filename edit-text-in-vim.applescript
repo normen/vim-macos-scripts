@@ -2,10 +2,17 @@
 -- Released under MIT license by Normen Hansen
 
 on run {input, parameters}
-	-- create temp file with contents
-	-- "/tmp/" should be: (POSIX path of (path to temporary items folder from user domain))
-	-- but that doesn't work, vim has no access
-	-- maybe Terminal.app has no access to that folder
+	-- Save calling application name to bring it back to front
+	-- (disabled for now as bringing back to front doesn't work)
+	--tell application "System Events"
+	--	set originalAppName to name of first process whose frontmost is true
+	--end tell
+	
+	-- Create temp file with text content for VIM to open.
+	-- We're using "/tmp/" but it should be:
+	-- (POSIX path of (path to temporary items folder from user domain))
+	-- That doesn't work though, vim has no access to files there.
+	-- Maybe Terminal.app has no access to that folder.
 	set posixtmpfile to "/tmp/" & "vim_" & text 3 thru -1 of ((random number) as string)
 	try
 		set fhandle to open for access posixtmpfile with write permission
@@ -47,5 +54,11 @@ on run {input, parameters}
 	set myString to (read posixtmpfile as «class utf8»)
 	-- delete file posixtmpfile
 	do shell script "/bin/rm " & quoted form of posixtmpfile
+	-- TODO: bring original app to front again 
+	-- Can't do it directly as the app is blocked by calling this applescript.
+	-- Doing "tell application originalAppName to activate" causes a deadlock.
+	-- Calling osascript as a background process doesn't work either.
+	-- I guess it would be in order if Apple added that behavior
+	-- automatically when selecting "replace text".
 	return myString
 end run
