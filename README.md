@@ -69,5 +69,5 @@ The rest are "normal" characters.
 
 _Hint: If the above doesn't work for you try changing the last line to_
 
-`auto BufEnter * let &titlestring = "file://" . hostname() . expand("%:p")`
+`auto BufEnter * let &titlestring = "file://" . substitute(hostname().expand("%:p"), " ", "+", "")`
 
