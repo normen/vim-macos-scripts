@@ -14,11 +14,17 @@ Installation should work similar to below. Add a script action.
 - Add an AppleScript Action
 - Copy-Paste the text of `edit-text-in-vim.applescript` to the Applescript action
 - Add a "Stop and Return script result" Action
+- In the Settings of the Shortcut:
+  - Set available in "Services"
+  - Add a keyboard shortcut if wanted
 
 #### open-file-in-vim
 - Create a new Shortcut
 - Add an AppleScript Action
 - Copy-Paste the text of `open-file-in-vim.applescript` to the Applescript action
+- In the Settings of the Shortcut:
+  - Set available in "Services" and "Finder"
+  - Add a keyboard shortcut if wanted
 
 ## How to use (Automator)
 #### Prepare Terminal.app
@@ -86,9 +92,10 @@ _Hint: If the above doesn't work for you try changing the last line to_
 `auto BufEnter * let &titlestring = "file://" . substitute(hostname().expand("%:p"), " ", "+", "")`
 
 ## Alternative for tmux
-If you are using tmux and its running anyway you might be interested in these shell scripts to use instead of the AppleScripts:
+If you are using tmux and its running anyway you might be interested in these shell scripts to use instead of opening Terminal windows.
 
 #### edit-text-in-vim
+- Add a new Shortcut
 - Add a Script action
 - Set the script:
 ```
@@ -101,8 +108,12 @@ cat $TMPFILE
 ```
 - Set "Input as stdin"
 - Add a "Stop and return script value"
+- In the Settings of the Shortcut:
+  - Set available in "Services"
+  - Add a keyboard shortcut if wanted
 
 #### open-file-in-vim
+- Add a new Shortcut
 - Add a Script action
 - Set the script:
 ```
@@ -111,3 +122,6 @@ FOLDER=$(dirname $1)
 tmux new-window "cd $FOLDER; vim '$1'"
 ```
 - Set "Input as arguments"
+- In the Settings of the Shortcut:
+  - Set available in "Services" and "Finder"
+  - Add a keyboard shortcut if wanted
