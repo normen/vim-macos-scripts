@@ -2,11 +2,25 @@
 Applescript files to create Automator actions invoking VIM in Terminal.app
 
 ## What is this?
-These Applescript files can be used with the Automator application on MacOSX. They allow you to create Quick Actions to edit text files or text snippets in the VIM command-line editor.
+These Applescript files can be used with the Shortcuts or Automator application on MacOSX. They allow you to create Quick Actions to edit text files or text snippets in the VIM command-line editor.
 
 ![edit-in-vim-example](/doc/edit-in-vim.gif?raw=true "Edit in VIM")
 
-## How to use
+## How to use (Shortcuts)
+Installation should work similar to below. Add a script action.
+
+#### edit-text-in-vim
+- Create a new Shortcut
+- Add an AppleScript Action
+- Copy-Paste the text of `edit-text-in-vim.applescript` to the Applescript action
+- Add a "Stop and Return script result" Action
+
+#### open-file-in-vim
+- Create a new Shortcut
+- Add an AppleScript Action
+- Copy-Paste the text of `open-file-in-vim.applescript` to the Applescript action
+
+## How to use (Automator)
 #### Prepare Terminal.app
 - Open Terminal.app
 - Press `Command-,` to open its settings
@@ -71,3 +85,29 @@ _Hint: If the above doesn't work for you try changing the last line to_
 
 `auto BufEnter * let &titlestring = "file://" . substitute(hostname().expand("%:p"), " ", "+", "")`
 
+## Alternative for tmux
+If you are using tmux and its running anyway you might be interested in these shell scripts to use instead of the AppleScripts:
+
+#### edit-text-in-vim
+- Add a Script action
+- Set the script:
+```
+TMPFILE=$(mktemp)
+cat>$TMPFILE
+osascript -e 'tell application "Terminal" to activate'
+tmux new-window "vim '$TMPFILE';tmux wait-for -S edit_return"
+tmux wait edit_return
+cat $TMPFILE
+```
+- Set "Input as stdin"
+- Add a "Stop and return script value"
+
+#### open-file-in-vim
+- Add a Script action
+- Set the script:
+```
+osascript -e 'tell application "Terminal" to activate'
+FOLDER=$(dirname $1)
+tmux new-window "cd $FOLDER; vim '$1'"
+```
+- Set "Input as arguments"
